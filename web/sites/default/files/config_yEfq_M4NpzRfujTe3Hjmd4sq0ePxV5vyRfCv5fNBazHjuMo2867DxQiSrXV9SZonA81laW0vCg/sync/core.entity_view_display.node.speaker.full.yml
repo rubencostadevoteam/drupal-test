@@ -1,0 +1,71 @@
+uuid: 36ea9ac3-b435-432e-a7a0-500d8a48a3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.speaker.body
+    - field.field.node.speaker.field_email
+    - field.field.node.speaker.layout_builder__layout
+    - node.type.speaker
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ea837c00-d362-4713-b978-890e581440dd:
+            uuid: ea837c00-d362-4713-b978-890e581440dd
+            region: content
+            configuration:
+              id: 'extra_field_block:node:speaker:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          856c95e6-6344-4c07-a79f-c1610edbfb3f:
+            uuid: 856c95e6-6344-4c07-a79f-c1610edbfb3f
+            region: content
+            configuration:
+              id: 'field_block:node:speaker:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.speaker.full
+targetEntityType: node
+bundle: speaker
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_email: true
+  layout_builder__layout: true

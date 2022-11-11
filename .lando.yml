@@ -1,3 +1,6 @@
+services:
+  myservice:
+    type: phpmyadmin
 name: lando-production
 recipe: drupal9
 config:
